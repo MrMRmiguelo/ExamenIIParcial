@@ -1,0 +1,9 @@
+﻿<Application x:Class="ExamenIIParcial___Programacion_de_Negocios.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ExamenIIParcial___Programacion_de_Negocios"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

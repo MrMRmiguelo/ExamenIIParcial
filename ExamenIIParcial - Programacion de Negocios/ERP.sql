@@ -1,0 +1,9 @@
+USE tempdb
+GO
+
+CREATE DATABASE ERP
+GO
+
+USE ERP
+GO
+
