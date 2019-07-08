@@ -30,7 +30,7 @@ namespace ExamenIIParcial___Programacion_de_Negocios
         {
             InitializeComponent();
             SqlConnection sqlConnection = new SqlConnection();
-            SmtpClient correo = new SmtpClient();
+           
         }
         private void MostrarUsers()
         {
@@ -48,7 +48,6 @@ namespace ExamenIIParcial___Programacion_de_Negocios
                         sqlDataAdapter.Fill(Usuarios);
 
                         lbUsuarios.DisplayMemberPath = "nombre";
-                        lbUsuarios.SelectedValuePath = "id";
                         lbUsuarios.ItemsSource = Usuarios.DefaultView;
                     }
                 }
@@ -62,9 +61,9 @@ namespace ExamenIIParcial___Programacion_de_Negocios
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            if (TBUser.Text == string.Empty)
+            if (TBUser.Text == string.Empty && TBNombre.Text == string.Empty && TBApellido.Text == string.Empty && TBPass.Text == string.Empty && TBCorreo.Text == string.Empty)
             {
-                MessageBox.Show("Debe ingresar un nombre de usuario");
+                MessageBox.Show("Debe completar todos los campos");
                 TBUser.Focus();
             }
             else
@@ -95,17 +94,81 @@ namespace ExamenIIParcial___Programacion_de_Negocios
 
         private void BtnEditar_Click(object sender, RoutedEventArgs e)
         {
+            if (TBUser.Text == string.Empty && TBNombre.Text == string.Empty && TBApellido.Text == string.Empty && TBPass.Text == string.Empty && TBCorreo.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar todos los campos");
+                TBUser.Focus();
+            }
+            else
+            {
+                try
+                {
+                    string nombre = "UPDATE Usuarios.Usuario SET nombre = @nombre";
+                    string apellido = "UPDATE Usuarios.Usuario SET apellido = @apellido";
+                    string correo = "UPDATE Usuarios.Usuario SET correo = @correo";
 
+                    SqlCommand sqlCommand = new SqlCommand(nombre, sqlConnection);
+                    SqlCommand sqlCommand1 = new SqlCommand(apellido, sqlConnection);
+                    SqlCommand sqlCommand2 = new SqlCommand(correo, sqlConnection);
+
+                    sqlConnection.Open();
+
+                    sqlCommand.Parameters.AddWithValue("@nombre", TBUser.Text);
+                    sqlCommand.Parameters.AddWithValue("@apellido", TBApellido.Text);
+                    sqlCommand.Parameters.AddWithValue("@correo", TBCorreo.Text);
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                    MostrarUsers();
+                }
+
+            }
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
+            if (TBUser.Text == string.Empty && TBNombre.Text == string.Empty && TBApellido.Text == string.Empty && TBPass.Text == string.Empty && TBCorreo.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar todos los campos");
+                TBUser.Focus();
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE Usuarios.Usuario WHERE nombre = @nombre AND apellido = @apellido AND nombreusuario = @nombreusuario";
+                    
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                   
 
+                    sqlConnection.Open();
+
+                    sqlCommand.Parameters.AddWithValue("@nombreusuario", TBUser.Text);
+                    sqlCommand.Parameters.AddWithValue("@nombre", TBApellido.Text);
+                    sqlCommand.Parameters.AddWithValue("@nombre", TBCorreo.Text);
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                    MostrarUsers();
+                }
+
+            }
         }
        
     }

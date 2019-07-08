@@ -24,8 +24,7 @@
         <ListBox Name="lbUsuarios" HorizontalAlignment="Left" Height="281" Margin="493,66,0,0" VerticalAlignment="Top" Width="246"/>
         <Button Name="btnAgregar" Click="BtnAgregar_Click" Content="Agregar" HorizontalAlignment="Left" Margin="25,254,0,0" VerticalAlignment="Top" Width="102"/>
         <Button Name="btnEditar" Click="BtnEditar_Click" Content="Editar" HorizontalAlignment="Left" Margin="166,254,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button Name="btnModificar" Click="BtnModificar_Click" Content="Eliminar" HorizontalAlignment="Left" Margin="87,296,0,0" VerticalAlignment="Top" Width="247" Height="38"/>
-        <Button Name="btnEliminar" Click="BtnEliminar_Click" Content="Modificar" HorizontalAlignment="Left" Margin="312,254,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button Name="btnModificar" Click="BtnModificar_Click" Content="Eliminar" HorizontalAlignment="Left" Margin="302,254,0,0" VerticalAlignment="Top" Width="105" Height="20"/>
 
     </Grid>
 </Window>
