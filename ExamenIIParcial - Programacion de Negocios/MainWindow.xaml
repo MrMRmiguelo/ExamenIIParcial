@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:ExamenIIParcial___Programacion_de_Negocios"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,-29,0">
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="30,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.605,0.558"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="30,108,0,0" VerticalAlignment="Top"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Correo Electronico" HorizontalAlignment="Left" Margin="30,198,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" Background="Chartreuse" BorderThickness="1" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="792">
+            <Label Content="Genisys" FontSize="22" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" Background="Chartreuse" BorderThickness="1" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="792" Margin="0,377,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="166,81,0,0" TextWrapping="Wrap" Name="TBNombre" VerticalAlignment="Top" Width="214"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="166,112,0,0" TextWrapping="Wrap" Name="TBApellido" VerticalAlignment="Top" Width="214"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="166,142,0,0" TextWrapping="Wrap" Name="TBUser" VerticalAlignment="Top" Width="214"/>
+        <TextBox Name="TBPass" HorizontalAlignment="Left" Height="23" Margin="166,170,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="214"/>
+        <TextBox Name="TBCorreo" HorizontalAlignment="Left" Height="23" Margin="166,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="214"/>
+        <ListBox Name="lbUsuarios" HorizontalAlignment="Left" Height="281" Margin="493,66,0,0" VerticalAlignment="Top" Width="246"/>
+        <Button Name="btnAgregar" Click="BtnAgregar_Click" Content="Agregar" HorizontalAlignment="Left" Margin="25,254,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button Name="btnEditar" Click="BtnEditar_Click" Content="Editar" HorizontalAlignment="Left" Margin="166,254,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button Name="btnModificar" Click="BtnModificar_Click" Content="Eliminar" HorizontalAlignment="Left" Margin="87,296,0,0" VerticalAlignment="Top" Width="247" Height="38"/>
+        <Button Name="btnEliminar" Click="BtnEliminar_Click" Content="Modificar" HorizontalAlignment="Left" Margin="312,254,0,0" VerticalAlignment="Top" Width="102"/>
+
     </Grid>
 </Window>
